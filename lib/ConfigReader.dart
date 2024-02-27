@@ -11,7 +11,7 @@ class ConfigReader{
     final configString = await rootBundle.loadString("config.app_config.json");
     _config = json.decode(configString);
   }
-
+  /// add new
   String getSecretKey(){
     return _config["secret_key"];
   }
