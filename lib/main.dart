@@ -24,6 +24,7 @@ class _TodoHomeState extends State<TodoHome> {
 
   bool? isChecked = false;
 
+
   Widget buildTodos() {
     return ListView.builder(
       itemCount: todos.length,
@@ -48,7 +49,12 @@ class _TodoHomeState extends State<TodoHome> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(11)),
                           borderSide: BorderSide(color: Colors.blue),
+
                         ),
+
+                      ),
+                      style: TextStyle(
+                        decoration:TextDecoration.none
                       ),
                     ),
                      
@@ -56,11 +62,7 @@ class _TodoHomeState extends State<TodoHome> {
                       ElevatedButton(
                         onPressed: () {
                           setState(() {
-                            temp = item;
                             todos.remove(item);
-                            todos.add(temp);
-                            var tile_color = Colors.red;
-                            todos[index] = Text(temp,style: TextStyle(color: tile_color), ) as String;
                           });
                           Navigator.pop(context);
                         },
